@@ -1,31 +1,25 @@
 <?php
 
 require_once('Vehicle.php');
+require_once('LightableInterface.php');
 
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
-    private bool $hasParkBrake;
 
 
-
-    public function setParkBrake(bool $hasParkBrake): void
+    public function switchOn(): bool
     {
-        $this->hasParkBrake = $hasParkBrake;
+        return true;
     }
 
-    public function getParkBrake(): bool
+    public function switchOff(): bool
     {
-        return $this->hasParkBrake;
+        return false;
     }
 
     public function start(): string
     {
-        $sentence = "";
-        if ($this->hasParkBrake = true) {
-            throw new Exception("Homer you are dumb ? take off that handbrake.");
-        } else {
-            $sentence = "<br> <h1 style='color:red; margin:0px;'>Let's gong my little car !!!</h1>";
-            return $sentence;
-        }
+        $sentence = "<br> <h1 style='color:red; margin:0px;'>Let's gong my little car !!!</h1>";
+        return $sentence;
     }
 }

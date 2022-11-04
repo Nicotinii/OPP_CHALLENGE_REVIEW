@@ -13,26 +13,17 @@ $multipla = new Car('Rainbow', 20, 'kerosene');
 $tandem = new Bicycle('Purple', 2, 'elbow grease');
 $hoverboard = new Skateboard('PinkYellowGreen', 1, 'elbow grease');
 
-try {
-    echo $multipla->start();
-} catch (Exception $msg) {
-    echo $msg->getMessage(), "<br>";
-    $multipla->setParkBrake(true);
-} finally {
-    $multipla->setCurrentSpeed(80);
-    echo $multipla->forward();
-    echo $multipla->brake();
-    echo "Ma voiture roule comme un donut.<br><br>";
-}
+$c1->setCurrentSpeed(11);
+var_dump($c1->switchOn());
+echo '<br>';
+$c1->setCurrentSpeed(10);
+var_dump($c1->switchOff());
+echo '<br><br>';
 
-try {
-    echo $multipla->start();
-} catch (Exception $msg) {
-    echo $msg->getMessage(), "<br>";
-    $multipla->setParkBrake(false);
-} finally {
-    $multipla->setCurrentSpeed(80);
-    echo $multipla->forward();
-    echo $multipla->brake();
-    echo "Ma voiture roule comme un donut.<br><br>";
-}
+
+$tandem->setCurrentSpeed(11);
+var_dump($tandem->switchOn());
+echo '<br>';
+$tandem->setCurrentSpeed(10);
+var_dump($tandem->switchOn());
+echo '<br><br>';
