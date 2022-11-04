@@ -13,17 +13,26 @@ $multipla = new Car('Rainbow', 20, 'kerosene');
 $tandem = new Bicycle('Purple', 2, 'elbow grease');
 $hoverboard = new Skateboard('PinkYellowGreen', 1, 'elbow grease');
 
-$motorway = new MotorWay(4, 130);
-$residentialWay = new ResidentialWay(2, 50);
-$pedestrianWay = new PedestrianWay(1, 10);
+try {
+    echo $multipla->start();
+} catch (Exception $msg) {
+    echo $msg->getMessage(), "<br>";
+    $multipla->setParkBrake(true);
+} finally {
+    $multipla->setCurrentSpeed(80);
+    echo $multipla->forward();
+    echo $multipla->brake();
+    echo "Ma voiture roule comme un donut.<br><br>";
+}
 
-echo $motorway->addVehicle($c1);
-echo $motorway->addVehicle($multipla);
-echo $motorway->addVehicle($tandem) . '<br>';
-
-echo $residentialWay->addVehicle($tandem);
-echo $residentialWay->addVehicle($hoverboard);
-echo $residentialWay->addVehicle($ufo) . '<br>';
-
-echo $pedestrianWay->addVehicle($hoverboard);
-echo $pedestrianWay->addVehicle($multipla);
+try {
+    echo $multipla->start();
+} catch (Exception $msg) {
+    echo $msg->getMessage(), "<br>";
+    $multipla->setParkBrake(false);
+} finally {
+    $multipla->setCurrentSpeed(80);
+    echo $multipla->forward();
+    echo $multipla->brake();
+    echo "Ma voiture roule comme un donut.<br><br>";
+}
