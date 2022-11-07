@@ -1,20 +1,9 @@
 <?php
 
-require_once('Bicycle.php');
-require_once('Car.php');
-
-$bike = new Bicycle('red', 1);
-$car1 = new Car('pink', 4, 'electric');
-
-echo $bike->forward();
-echo $bike->brake() . "<br>";
-
-echo $car1->start();
-echo $car1->forward();
-echo $car1->brake() . "<br>";
+require_once('Person.php');
 
 
-echo $car1->start();
-echo $car1->forward();
-$car1->setCurrentSpeed(200);
-echo $car1->brake();
+$bg = new Person('Nico', 'Lefevre', 'Maison', 2000, 2022);
+
+echo $bg->infos();
+echo $bg->getAge();
